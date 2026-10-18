@@ -4,10 +4,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     MCP_HOST=0.0.0.0 \
     MCP_PORT=8000 \
+    HOME=/home/mcp \
     SSH_MCP_KNOWN_HOSTS=/home/mcp/.ssh/known_hosts \
-    SSH_MCP_KEY_ROOT=/home/mcp/.ssh \
-    SSH_MCP_TRANSFER_ROOT=/home/mcp/transfers \
-    SSH_MCP_PROFILES_FILE=/home/mcp/profiles.json
+    SSH_MCP_TRANSFER_ROOT=/home/mcp/transfers
 
 WORKDIR /opt/ssh-mcp
 COPY pyproject.toml README.md ./
