@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+profiles.json
+transfers/
+.ssh/
+*.pem
+*.key
+id_*

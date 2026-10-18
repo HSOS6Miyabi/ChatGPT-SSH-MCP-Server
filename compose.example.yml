@@ -1,0 +1,16 @@
+services:
+  ssh-mcp:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      MCP_HOST: "0.0.0.0"
+      MCP_PORT: "8000"
+      MCP_BEARER_TOKEN: "${MCP_BEARER_TOKEN:?Set MCP_BEARER_TOKEN}"
+      MCP_ALLOWED_HOSTS: "${MCP_ALLOWED_HOSTS:?Set MCP_ALLOWED_HOSTS}"
+      PRODUCTION_SSH_PASSWORD: "${PRODUCTION_SSH_PASSWORD:-}"
+    volumes:
+      - ./secrets/ssh:/home/mcp/.ssh:ro
+      - ./secrets/profiles.json:/home/mcp/profiles.json:ro
+      - ./transfers:/home/mcp/transfers

@@ -1,0 +1,14 @@
+{
+  "staging": {
+    "host": "192.0.2.10",
+    "port": 22,
+    "username": "deploy",
+    "key_path": "id_ed25519"
+  },
+  "production": {
+    "host": "prod.example.com",
+    "port": 2222,
+    "username": "admin",
+    "password_env": "PRODUCTION_SSH_PASSWORD"
+  }
+}
